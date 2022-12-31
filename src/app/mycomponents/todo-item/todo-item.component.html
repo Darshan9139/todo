@@ -1,15 +1,16 @@
-<div class="container">
+<div class="card-body">
   <ol class="list-group">
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div>
-        <input class="form-check-input" type="checkbox"
+        <input class="form-check-input" type="checkbox" [attr.checked]="!Todo.status ? '' : null"
           (change)="CompleteTask(Todo)">
       </div>
       <div class="ms-2 me-auto" [ngClass]="{'text-decoration-line-through':!Todo.status}">
-        <div class="fw-bold">{{Todo.title}}}</div>
-        {{Todo.description}}
+        <div class="fw-bold">{{Todo.title}}</div>
+        <div class="overflow-auto">{{Todo.description}}</div>
       </div>
       <button type="button" class="btn btn-block btn-danger" (click)="DeleteTask(Todo)">Delete</button>
     </li>
   </ol>
+  <br>
 </div>
